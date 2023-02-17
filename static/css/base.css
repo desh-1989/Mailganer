@@ -1,0 +1,436 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    color: rgb(255, 255, 255);
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    height: 100%;
+    min-width: 100%;
+    margin: 0;
+}
+
+.row {
+    background-image: url("/static/any/index_background.jpg");
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-start;
+    opacity: 0.8;
+}
+
+#mg_logo {
+    width: 100px;
+
+}
+
+.col-header {
+    display: flex;
+    padding: 0 20px;
+    max-height: 60px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+ul.menu {
+    font-size: 16px;
+    font-weight: 600;
+    height: 100%;
+    marker: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu li {
+    display: inline-block;
+    height: 100%;
+    margin: 0 10px;
+}
+
+ul.menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+ul.menu a:hover {
+    color: rgb(135, 206, 250);
+}
+
+.col-body {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.col-right, .col-left {
+    color: rgb(33, 43, 53);
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    height: 100%;
+    padding: 20px;
+}
+
+.col-left {
+    justify-content: flex-end;
+}
+
+.col-form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.panel {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: rgba(63, 63, 68, 0.05) 0 0 0 2px, rgba(63, 63, 68, 0.15) 0 2px 3px 0;
+    padding: 20px 0;
+    width: 400px;
+}
+
+.user-panel {
+    display: flex;
+    flex-direction: row;
+}
+
+.action-panel {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px;
+    width: 100%;
+}
+
+.title-panel {
+    align-items: flex-start;
+}
+
+.sign-form {
+    color: rgb(33, 43, 53);
+    padding: 20px 30px;
+    width: 400px;
+}
+
+.sign-form label {
+    display: block;
+}
+
+.sign-form input {
+    width: 100%;
+}
+
+.helptext {
+    display: none;
+}
+
+.btn-form-submit {
+    background-color: rgb(65, 105, 225);
+    background-origin: padding-box;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    padding: 7px 12px;
+    position: relative;
+    text-decoration-color: rgb(255, 255, 255);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+    width: 100px;
+}
+
+.block-reg {
+    display: flex;
+    color: rgb(33, 43, 53);
+    font-size: 16px;
+    font-weight: 700;
+    justify-content: center;
+}
+
+.btn-col {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-header {
+    display: flex;
+    align-items: center;
+    border: rgb(255, 255, 255) solid 2px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.5em;
+    width: 100px;
+}
+
+.btn-header:hover {
+    background-color: rgb(30, 144, 255);
+    color: rgb(0, 0, 139);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.select-status {
+    width: 100%;
+}
+
+ul.errorlist {
+    color: rgb(178, 34, 34);
+    font-size: 12px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.col-img, .col-data, .col-owners {
+    padding: 20px;
+    height: 100%;
+}
+
+.img-avatar {
+    width: 100%;
+}
+
+.btn-label {
+    width: 100%;
+}
+
+#owner-list {
+    height: 100%;
+    width: 100%;
+}
+
+.community-content-box {
+    border: rgb(222, 226, 230) solid 1px;
+    display: block;
+    height: 95%;
+    margin-bottom: 30px;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.community-item i {
+    color: red;
+}
+
+.add-subscriber i {
+    color: darkgreen;
+}
+
+.action-btn {
+    border: rgb(128, 128, 128) solid 1px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.action-btn:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+.mail-title {
+    border-bottom: rgb(128, 128, 128) solid 1px;
+    display: flex;
+    height: 30px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.mail-title:hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 220);
+}
+
+.mail-title span {
+    overflow: hidden;
+    width: 100%;
+}
+
+.mail-title.active {
+    color: rgb(70, 130, 180);
+}
+
+.mail-body {
+    display: none;
+}
+
+.mail-body.active {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.col-msg-body {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.col-msg-params {
+    font-size: 18px;
+}
+
+.icon-btn {
+    margin-left: 5px;
+    text-align: center;
+}
+
+.fa {
+    height: 20px;
+    width: 20px;
+}
+
+.icon-btn:hover {
+    color: rgb(255, 0, 0);
+}
+
+.delete-form, .edit-mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-mail {
+    margin-top: 50px;
+    max-height: 75%;
+    width: 100%;
+}
+
+.edit-mail-panel {
+    align-items: center;
+    color: rgb(33, 43, 53);
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    padding: 20px 50px;
+    width: 100%;
+}
+
+.edit-mail-panel input[type='text'] {
+    width: 75%;
+}
+
+.delete-panel {
+    color: rgb(33, 43, 53);
+    height: 200px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+}
+
+.delete-panel p {
+    overflow: hidden;
+}
+
+.delete-panel button {
+    margin: 50px 0;
+}
+
+.new-subscriber-panel {
+    color: rgb(33, 43, 53);
+    height: 250px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+}
+
+.col-variables {
+    align-items: center;
+    border-left: lightgrey solid 1px;
+    border-right: lightgrey solid 1px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.col-variables h4 {
+    margin-bottom: 50px;
+}
+
+.add-var {
+    margin: 5px 0;
+    width: 150px;
+}
+
+.link-answer {
+    display: none;
+}
+
+.mail-content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.mail-info {
+    border-right: gray solid 1px;
+    height: 100%;
+}
+
+p.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.mail-settings {
+    padding: 0 30px;
+}
+
+.change-settings-form label {
+    display: block;
+}
+
+.change-settings-form input[type='text'],
+input[type='datetime-local'],
+input[type='number'] {
+    width: 250px;
+    height: 30px;
+}
+
+#id_send_to {
+    width: 250px;
+    height: 30px;
+}
+
+.settings {
+    margin-top: 50px;
+    max-height: 90%;
+    overflow-y: scroll;
+}
+
+.task-param {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.task-param p {
+    margin: 2px;
+}

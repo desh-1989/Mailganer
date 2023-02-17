@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'index.html' %} {% load static %} {% block content %}
+<div class="col col-form">
+  <div class="panel">
+    <form class="sign-form" action="{% url 'accounts:login' %}" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <input class="btn-form-submit" type="submit" value="Войти" />
+    </form>
+    <div class="block-reg">
+      <span
+        >Нет аккаунта?
+        <a href="{% url 'accounts:signup' %}">Зарегистрироваться</a>
+      </span>
+    </div>
+  </div>
+</div>
+{% endblock %}

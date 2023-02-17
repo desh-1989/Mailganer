@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'home.html' %} {% load static %} {% block delete_form %}
+<div class="col delete-form">
+  <div class="panel new-subscriber-panel">
+    <p>Вы собираетесь подписаться на пользователя</p>
+    <p>{{ subscriber }}</p>
+    <form action="" method="post">
+      <input type="hidden" value="{{ owner.pk }}" name="owner" />
+      <input type="hidden" value="{{ subscriber.pk }}" name="subscriber" />
+      {% csrf_token %}
+      <button>Подписаться</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

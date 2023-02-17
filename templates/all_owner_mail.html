@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <div class="col col-body">
+        <div class="col-md-3 col-right">
+            <div class="panel action-panel title-panel">
+                {% if not object_list %}
+                    <div id="title" class="empty-title">
+                        <span>У вас нет созданных рассылок</span>
+                    </div>
+                {% endif %}
+                {% for mail in object_list %}
+                    <div id="title-{{ mail.id }}" class="mail-title">
+                        <span>{{ mail.title }}</span>
+                        <a class="icon-btn" href="{% url 'sender:settings' pk=mail.id %}"
+                            data-toggle="tooltip" title="Создать задачу рассылки">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                        <a class="icon-btn" href="{% url 'sender:delete' pk=mail.id %}"
+                           data-toggle="tooltip" title="Редактировать">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                        <a class="icon-btn" href="{% url 'sender:delete' pk=mail.id %}"
+                            data-toggle="tooltip" title="Удалить">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                {% endfor %}
+                <div class="col"></div>
+                <a href="{% url 'sender:create_mail' %}" class="btn action-btn">
+                    <span>Создать рассылку</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9 col-left">
+            <div class="panel action-panel body-panel">
+                {% for mail in object_list %}
+                    <div id="body-{{ mail.id }}" class="col mail-body">
+                        <div class="col-md-7 col-msg-body">
+                            {{ mail.body|safe }}
+                        </div>
+                        <div class="col-md-2 col-msg-params">
+                            <span>Просмотров: </span>
+                            <span>{{ mail.opened }}</span>
+                        </div>
+                        <div class="col-md-3 col-msg-params">
+                            <span>Задачи рассылок </span>
+                            <div class="settings">
+                                {% for param in settings %}
+                                    <div class="task-param">
+                                        <p>Задача №{{ param.id }}</p>
+                                        <p>{{ param.mailing }}
+                                            <span>
+                                                <a class="icon-btn" href="{% url 'sender:delete_settings' pk=param.id %}"
+                                                    data-toggle="tooltip" title="Удалить">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </span>
+                                        </p>
+                                        {% if param.send_via %}
+                                            <p>Отправить через {{ param.send_via }} мин</p>
+                                        {% endif %}
+                                        {% if param.send_in %}
+                                            <p>Отправить {{ param.send_in|date:"l d.m.Y" }}
+                                                {{ param.send_in|time:"H:i" }}</p>
+                                        {% endif %}
+                                        {% if param.send_by_birthday %}
+                                            <p>Отправить в день рождения.</p>
+                                        {% endif %}
+                                        {% if param.send_to %}
+                                            <p>подписчику: {{ param.send_to }}</p>
+                                        {% else %}
+                                            <p>всем подписчикам</p>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+<script src="{% static 'js/MailAll.js' %}"></script>
+<script src="{% static 'js/DataToggle.js' %}"></script>
+{%  endblock %}

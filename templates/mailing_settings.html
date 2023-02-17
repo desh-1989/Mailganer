@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'home.html' %} {% load static %} {% block content %}
+<div class="col edit-mail">
+  <div class="panel edit-mail-panel">
+    <div class="col mail-content">
+      <div class="col-md-2 mail-info">
+        <p>Рассылка</p>
+        <p class="title">{{ mailing.title }}</p>
+      </div>
+      <div class="col-md-10 mail-settings">
+        <p>Параметры задачи рассылки</p>
+        <form
+          class="change-settings-form"
+          action="{% url 'sender:settings' pk=mailing.id %}"
+          method="post"
+        >
+          {% csrf_token %} {{ form.as_p }}
+          <input type="submit" value="Сохранить" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

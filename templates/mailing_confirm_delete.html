@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'home.html' %} {% load static %} {% block delete_form %}
+<div class="col delete-form">
+  <div class="panel delete-panel">
+    <p>Вы собираетесь удалить рассылку</p>
+    <p>{{ object.title }}</p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <button>Удалить</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+celery==4.4.7
+Django==1.11.29
+django-ckeditor==5.2.2
+django-environ==0.4.5
+redis==3.5.3
+Pillow==6.2.2
+PyJWT==1.7.1
+social-auth-core==3.2.0
+social-auth-app-django==2.1.0

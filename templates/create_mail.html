@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <div class="col edit-mail">
+        <div class="panel edit-mail-panel">
+            <div class="col-md-9">
+                <form action="{% url 'sender:create_mail' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="btn-form-submit" type="submit" value="Сохранить">
+                </form>
+            </div>
+            <div class="col-md-3 col-variables">
+                <h4>Вставить переменную</h4>
+                <button class="add-var" value="{user}">Получатель</button>
+                <button class="add-var" value="{owner}">Отправитель</button>
+                <button class="add-var" value="{company}">Компания</button>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/InsertVariable.js' %}"></script>
+{%  endblock %}
